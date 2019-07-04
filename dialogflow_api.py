@@ -13,7 +13,7 @@ def get_dialog(text,session_id):
     logger.addHandler(TelegramBotLogsHandler())
 
     try:
-        credentials = Credentials.from_service_account_file("./Dkl-Bot-a247bee41ada.json")
+        credentials = Credentials.from_service_account_file("Dkl-Bot-a247bee41ada.json")
         session_client=dialogflow.SessionsClient(credentials=credentials)
         
         session = session_client.session_path(project_id, session_id)
