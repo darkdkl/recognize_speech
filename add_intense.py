@@ -7,7 +7,7 @@ import os
 def create_intent(project_id,display_name,answers,questions):
     
 
-    credentials = Credentials.from_service_account_file("./dkl_bot_utvfiy_develop.json")
+    credentials = Credentials.from_service_account_file("google-credentials.json")
     
     intents_client=dialogflow.IntentsClient(credentials=credentials)
     
