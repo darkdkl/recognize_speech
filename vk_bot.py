@@ -3,8 +3,7 @@ import os
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from dialogflow_api import get_dialog
-import logging
-from log_to_tgm import TelegramBotLogsHandler
+from log_to_tgm import logger
 
 
 def get_answer(event, vk_api):
@@ -18,12 +17,12 @@ def get_answer(event, vk_api):
             message=message,
             random_id=random.randint(1, 1000)
         )
+    else:
+        logger.info("VK-Бот ,пришел неизвестный запрос от пользователя")
 
 
 def main(vk_api=vk_api):
-    logger = logging.getLogger("Logs To Telegram")
-    logger.setLevel(logging.INFO)
-    logger.addHandler(TelegramBotLogsHandler())
+    
 
     try:
 

@@ -2,15 +2,12 @@ import dialogflow
 from google.api_core.exceptions import InvalidArgument
 from google.oauth2.service_account import Credentials
 import os
-import logging
-from log_to_tgm import TelegramBotLogsHandler
+from log_to_tgm import logger
 
 def get_dialog(text,session_id):
     project_id = os.environ['PROJECT_ID']
     lang = 'ru-RU'
-    logger = logging.getLogger("Logs To Telegram")
-    logger.setLevel(logging.INFO)
-    logger.addHandler(TelegramBotLogsHandler())
+  
 
     try:
         credentials = Credentials.from_service_account_file("google-credentials.json")

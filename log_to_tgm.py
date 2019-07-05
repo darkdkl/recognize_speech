@@ -10,3 +10,6 @@ class TelegramBotLogsHandler(logging.Handler):
         bot.send_message(chat_id=os.environ['CHAT_ID_FOR_LOGBOT'], text=self.format(record))
 
 
+logger = logging.getLogger("Logs To Telegram")
+logger.setLevel(logging.INFO)
+logger.addHandler(TelegramBotLogsHandler())
