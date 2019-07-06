@@ -1,6 +1,15 @@
-### Обучаемые Боты для службы поддержки  в Telegram  и VK с использованием нейросети  
+# Обучаемые Боты для службы поддержки  в Telegram  и VK с использованием нейросети  
 
-#### Перед первым запуском необходимо выполнить ряд обязательных условий :
+## Пример работы:
+
+
+![Screenshot](telegram_bot.gif)
+
+![Screenshot](vk_bot.gif) 
+
+## Перед первым запуском необходимо выполнить ряд обязательных условий :
+
+
 
 <b>1) Зарегистрируетесь на Heroku и создайте приложение (app) </b>
 
@@ -11,7 +20,7 @@ https://id.heroku.com/login
 Это  можно осуществить на вкладке Deploy. После подключения выполните Deploy Branch.
 
 В разделе Settings приложения необходимо создать переменные с названиями:
-CHAT_ID_FOR_LOGBOT,GOOGLE_APLICATION_CREDENTIALS,GOOGLE_CREDENTIALS,PROJECT_ID,TELEGRAM_BOT_TOKEN,TELEGRAM_LOGBOT_TOKEN,VK_TOKEN .Значения для них получим на следующих шагах. 
+CHAT_ID_FOR_LOGBOT, GOOGLE_APLICATION_CREDENTIALS, GOOGLE_CREDENTIALS, PROJECT_ID, TELEGRAM_BOT_TOKEN, TELEGRAM_LOGBOT_TOKEN, VK_TOKEN .Значения для них получим на следующих шагах. 
 
 <b>2) Зарегистрировать двух ботов Telegram  и получить их API ключи (бот для диалогов и бот для сервисных сообщений) </b>
 
@@ -51,13 +60,14 @@ https://dialogflow.com/docs/reference/agent#obtaining_access_tokens
 
 в файле questions.json находятся тестовые фразы для обучения проекта в DialogFlow
 
+```
 Запустите скрипт add_intense.py
 
+```
 
 
-
-#### Установка  и запуск на локальной машине
-Запуск бота также возможен  на локальной машине ,для этого в каталоге с модулем необходимо создать файл .env  в нем объявить переменные CHAT_ID_FOR_LOGBOT,GOOGLE_APLICATION_CREDENTIALS,GOOGLE_CREDENTIALS,PROJECT_ID,TELEGRAM_BOT_TOKEN,TELEGRAM_LOGBOT_TOKEN,VK_TOKEN и передать им  значения полученные в предыдущих шагах.файл токен переименовать на google-credentials.json и сохранить в каталоге с программой
+## Установка  и запуск на локальной машине
+Запуск бота также возможен  на локальной машине ,для этого в каталоге с модулем необходимо создать файл .env  в нем объявить переменные CHAT_ID_FOR_LOGBOT, GOOGLE_APLICATION_CREDENTIALS, GOOGLE_CREDENTIALS, PROJECT_ID, TELEGRAM_BOT_TOKEN, TELEGRAM_LOGBOT_TOKEN, VK_TOKEN и передать им  значения полученные в предыдущих шагах.файл токен переименовать на google-credentials.json и сохранить в каталоге с программой
 
 Python3 должен быть уже установлен. Затем используйте pip (или pip3, есть конфликт с Python2) для установки зависимостей: 
 
@@ -76,13 +86,13 @@ $python3 telegram_bot.py
 
 
 
-#### Запуск
+## Запуск
 После получения Токенов и  CHAT_ID  необходжимо перейти в раздел Resources и передвинув ползунки ботов вправо (через редактирование) разрешить запуск приложений.
 
 
 
 
-### Цель проекта
+## Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
 
