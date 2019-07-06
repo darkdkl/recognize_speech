@@ -22,7 +22,6 @@ def get_answer(event, vk_api):
 
 
 def main(vk_api=vk_api):
-    
 
     try:
 
