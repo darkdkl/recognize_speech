@@ -8,9 +8,7 @@ import logging
 
 def get_dialog(text, session_id):
 
-    logger = logging.getLogger("DF To Telegram")
-    logger.setLevel(logging.INFO)
-    logger.addHandler(TelegramBotLogsHandler())
+   
 
     project_id = os.environ['PROJECT_ID']
     lang = 'ru-RU'
@@ -33,4 +31,8 @@ def get_dialog(text, session_id):
 
 
 if __name__ == "__main__":
+    logger = logging.getLogger("DF To Telegram")
+    logger.setLevel(logging.INFO)
+    logger.addHandler(TelegramBotLogsHandler())
+    
     get_dialog('Привет,Проверка', None)
