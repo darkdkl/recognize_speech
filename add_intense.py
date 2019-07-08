@@ -5,7 +5,7 @@ import json
 import os
 
 
-def create_intent(project_id, display_name, answers, questions):
+def create_intent(project_id, display_name, answer, questions):
 
     credentials = Credentials.from_service_account_file(
         "google-credentials.json")
@@ -21,17 +21,16 @@ def create_intent(project_id, display_name, answers, questions):
         training_phrase = dialogflow.types.Intent.TrainingPhrase(parts=[part])
         training_phrases.append(training_phrase)
 
-    text = dialogflow.types.Intent.Message.Text(text=answers)
+    text = dialogflow.types.Intent.Message.Text(text=answer)
     message = dialogflow.types.Intent.Message(text=text)
 
     intent = dialogflow.types.Intent(
         display_name=display_name,
         training_phrases=training_phrases,
         messages=[message])
-    try:
-        response = intents_client.create_intent(parent, intent)
-    except InvalidArgument:
-        raise
+  
+    response = intents_client.create_intent(parent, intent)
+  
 
 
 def main():
