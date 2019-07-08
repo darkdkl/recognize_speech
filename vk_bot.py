@@ -3,10 +3,11 @@ import os
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from dialogflow_api import get_dialog
-from log_to_tgm import logger
-
+import logging
+from log_to_tgm import TelegramBotLogsHandler
 
 def get_answer(event, vk_api):
+    logger = logging.getLogger("VK To Telegram")
     message = get_dialog(event.text, event.user_id)
 
     bad_message = 'Не совсем понимаю, о чём ты.'
@@ -22,7 +23,9 @@ def get_answer(event, vk_api):
 
 
 def main(vk_api=vk_api):
-
+    logger = logging.getLogger("VK To Telegram")
+    logger.setLevel(logging.INFO)
+    logger.addHandler(TelegramBotLogsHandler())
     try:
 
         vk_session = vk_api.VkApi(token=os.environ['VK_TOKEN'])
