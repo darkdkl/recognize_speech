@@ -61,7 +61,9 @@ https://dialogflow.com/docs/reference/agent#obtaining_access_tokens
 в файле questions.json находятся тестовые фразы для обучения проекта в DialogFlow
 
 ```
-Запустите скрипт add_intense.py
+Запустите скрипт 
+
+$ python add_intense.py
 
 ```
 
