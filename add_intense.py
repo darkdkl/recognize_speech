@@ -40,10 +40,10 @@ def main():
         phrases = json.load(file)
 
    
-    for intent in phrases.items():
-        questions=intent[1]['questions']
-        answer=intent[1]['answer']
-        create_intent(project_id, intent[0], [answer], questions)
+    for name, data in phrases.items():
+        questions=data['questions']
+        answer=data['answer']
+        create_intent(project_id, name, [answer], questions)
 
 
 if __name__ == "__main__":
